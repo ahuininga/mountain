@@ -2,6 +2,7 @@
 <ruleset name="PSR2">
     <description>The PSR2 coding standard.</description>
     <rule ref="PSR2"/>
+    <file>./</file>
     <exclude-pattern>vendor</exclude-pattern>
     <exclude-pattern>storage/</exclude-pattern>
     <exclude-pattern>node_modules/</exclude-pattern>
