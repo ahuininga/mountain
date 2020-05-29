@@ -1,5 +1,5 @@
 includes:
-    - /home/scrutinizer/.composer/vendor/nunomaduro/larastan/extension.neon
+    - /home/scrutinizer/.composer/global/nunomaduro/larastan/vendor/nunomaduro/larastan/extension.neon
 
 parameters:
 
