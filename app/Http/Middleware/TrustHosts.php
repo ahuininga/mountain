@@ -9,7 +9,7 @@ class TrustHosts extends Middleware
     /**
      * Get the host patterns that should be trusted.
      *
-     * @return array<class-string>
+     * @return array<int, class-string|null>
      */
     public function hosts()
     {
