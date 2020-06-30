@@ -42,4 +42,18 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Disable auto-incrementing the primary key field for this model.
+     *
+     * @var bool
+     */
+    public $incrementing = false;
+
+    /**
+     * Override the primary key type.
+     *
+     * @var string
+     */
+    protected $keyType = 'string';
 }
