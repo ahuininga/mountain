@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 /**
  * Class User
@@ -22,7 +24,7 @@ class User extends Authenticatable
      * @var array<string>
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'firstname', 'lastname', 'email', 'password',
     ];
 
     /**
@@ -56,4 +58,26 @@ class User extends Authenticatable
      * @var string
      */
     protected $keyType = 'string';
+
+    /**
+     * Generate an uuid instead of autoincrement id.
+     */
+    protected static function boot()
+    {
+        parent::boot();
+        //generate an uuid on new models
+        self::creating(function ($model) {
+            $model->id = Str::uuid()->toString();
+            $model->password = Hash::make($model->password);
+        });
+    }
+
+    /**
+     * Get the apps this user.
+     */
+    public function apps()
+    {
+        return $this->hasMany('App\Models\App');
+    }
+
 }

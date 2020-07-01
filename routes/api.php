@@ -12,3 +12,9 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
+Route::namespace('Api')->group(function () {
+    Route::apiResource('users', 'UsersController')->parameters(['users' => 'id']);
+    Route::apiResource('apps', 'AppsController')->parameters(['apps' => 'id']);
+    Route::apiResource('urls', 'UrlsController')->parameters(['urls' => 'id']);
+});
