@@ -15,6 +15,8 @@ class Url extends BaseModel
 
     /**
      * Get the app that owns this url.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function app()
     {

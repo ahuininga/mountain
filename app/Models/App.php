@@ -14,6 +14,8 @@ class App extends BaseModel
 
     /**
      * Get the user that owns this app.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function user()
     {
@@ -22,6 +24,8 @@ class App extends BaseModel
 
     /**
      * Get the urls belonging to this app.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function urls()
     {

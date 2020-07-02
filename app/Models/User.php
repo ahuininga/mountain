@@ -74,6 +74,8 @@ class User extends Authenticatable
 
     /**
      * Get the apps this user.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function apps()
     {

@@ -12,8 +12,19 @@ use Exception;
 
 abstract class ApiController extends Controller
 {
+    /**
+     * @var string $modelName
+     */
     public $modelName;
+
+    /**
+     * @var string $model
+     */
     public $model;
+
+    /**
+     * @var int $perPage
+     */
     protected $perPage = 15;
 
     /**
@@ -27,7 +38,7 @@ abstract class ApiController extends Controller
             throw new Exception('Model name property not set', 500);
         }
 
-        $model = '\App\Models\\'.$this->modelName;
+        $model = '\App\Models\\' . $this->modelName;
 
         $this->model = new $model;
     }
@@ -35,7 +46,7 @@ abstract class ApiController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return ApiCollection
+     * @return ApiCollection <array>
      */
     public function index()
     {
@@ -46,7 +57,7 @@ abstract class ApiController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return ApiCollection
+     * @return ApiCollection <array>
      */
     public function store(Request $request)
     {
@@ -61,7 +72,7 @@ abstract class ApiController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return ApiCollection
+     * @return ApiCollection <array>
      */
     public function show($id)
     {
@@ -73,7 +84,7 @@ abstract class ApiController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return ApiCollection
+     * @return ApiCollection <array>
      */
     public function update(Request $request, $id)
     {
@@ -103,7 +114,7 @@ abstract class ApiController extends Controller
      * Send formated response for api.
      *
      * @param mixed $response
-     * @return ApiCollection
+     * @return ApiCollection <array>
      */
     protected function apiResponse($response)
     {

@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Builder;
 
 trait MultiTenantable
 {
+    /**
+     * @return void
+     */
     protected static function bootMultitenantable()
     {
         if (auth()->check()) {
