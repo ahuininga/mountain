@@ -7,7 +7,7 @@ class Url extends BaseModel
     /**
      * The attributes that are mass assignable.
      *
-     * @var array
+     * @var array<string>
      */
     protected $fillable = [
         'url', 'app_id',

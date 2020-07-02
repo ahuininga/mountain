@@ -8,6 +8,9 @@ class App extends BaseModel
 {
     use MultiTenantable;
 
+    /**
+     * @var array<string>
+     */
     protected $fillable = [
         'name', 'user_id', 'active',
     ];
