@@ -18,7 +18,7 @@ abstract class ApiController extends Controller
     public $modelName;
 
     /**
-     * @var string $model
+     * @var \Illuminate\Database\Eloquent\Model $model
      */
     public $model;
 
@@ -40,7 +40,7 @@ abstract class ApiController extends Controller
 
         $model = '\App\Models\\' . $this->modelName;
 
-        $this->model = new $model;
+        $this->model = new $model();
     }
 
     /**
@@ -84,7 +84,7 @@ abstract class ApiController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return ApiCollection <array>
+     * @return ApiCollection<array>
      */
     public function update(Request $request, $id)
     {
@@ -114,7 +114,7 @@ abstract class ApiController extends Controller
      * Send formated response for api.
      *
      * @param mixed $response
-     * @return ApiCollection <array>
+     * @return ApiCollection<array>
      */
     protected function apiResponse($response)
     {

@@ -21,7 +21,7 @@ class UsersController extends ApiController
     /**
      * @param Request $request
      * @param string $required
-     * @return array <string> |void
+     * @return array<string>|void
      */
     protected function validateRequest(Request $request, $required = 'required:')
     {

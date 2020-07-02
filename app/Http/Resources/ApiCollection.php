@@ -10,7 +10,7 @@ class ApiCollection extends ResourceCollection
      * Transform the resource collection into an array.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return array <collection>
+     * @return array<\Illuminate\Support\Collection>
      * @SuppressWarnings("unused")
      */
     public function toArray($request)
