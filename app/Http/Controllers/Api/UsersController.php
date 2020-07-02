@@ -26,10 +26,10 @@ class UsersController extends ApiController
     protected function validateRequest(Request $request, $required = 'required:')
     {
         $request->validate([
-            'firstname' => $required.'string:max:255',
-            'lastname' => $required.'string:max:255',
-            'email' => $required.'email:unique:users',
-            'password' => $required.'string:max:255',
+            'firstname' => $required . 'string:max:255',
+            'lastname' => $required . 'string:max:255',
+            'email' => $required . 'email:unique:users',
+            'password' => $required . 'string:max:255',
         ]);
     }
 }

@@ -26,8 +26,8 @@ class AppsController extends ApiController
     protected function validateRequest(Request $request, $required = 'required:')
     {
         $request->validate([
-            'name' => $required.'max:255',
-            'active' => $required.'boolean',
+            'name' => $required . 'max:255',
+            'active' => $required . 'boolean',
         ]);
     }
 }

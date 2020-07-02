@@ -26,7 +26,7 @@ class UrlsController extends ApiController
     protected function validateRequest(Request $request, $required = 'required:')
     {
         $request->validate([
-            'url' => $required.'url:unique:url',
+            'url' => $required . 'url:unique:url',
         ]);
     }
 }
