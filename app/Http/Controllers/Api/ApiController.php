@@ -30,7 +30,6 @@ abstract class ApiController extends Controller
     /**
      * ApiController constructor.
      * @throws \Exception
-     * @SuppressWarnings(missingimport)
      */
     public function __construct()
     {

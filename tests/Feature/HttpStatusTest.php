@@ -2,7 +2,6 @@
 
 namespace Tests\Feature;
 
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 use Illuminate\Support\Facades\Route;
 
@@ -19,7 +18,6 @@ class HttpStatusTest extends TestCase
 
     public function testGet()
     {
-        $this->seed();
         foreach ($this->allRoutes['GET'] as $route) {
             if (stripos($route->uri, '_ignition') !== false) {
                 continue;
@@ -36,7 +34,6 @@ class HttpStatusTest extends TestCase
 
     public function testDelete()
     {
-        $this->seed();
         foreach ($this->allRoutes['DELETE'] as $route) {
             if (stripos($route->uri, '_ignition') !== false) {
                 continue;
