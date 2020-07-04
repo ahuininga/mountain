@@ -2,12 +2,16 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class HomepageController extends Controller
+class HomepageController extends FrontendController
 {
-    public function index(Request $request) {
+    /**
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function index(Request $request)
+    {
         return view('frontend.homepage.index');
     }
 }
