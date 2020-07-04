@@ -9,7 +9,7 @@ class DashboardController extends AdminController
     /**
      * @return string
      */
-    public function index ()
+    public function index()
     {
         return 'dashboard';
     }

@@ -14,6 +14,7 @@ class ActiveScope implements Scope
      * @param  \Illuminate\Database\Eloquent\Builder  $builder
      * @param  \Illuminate\Database\Eloquent\Model  $model
      * @return void
+     * @SuppressWarnings(PHPMD.UnusedLocalVariable)
      */
     public function apply(Builder $builder, Model $model)
     {
