@@ -16,8 +16,10 @@ class UrlsTableSeeder extends Seeder
 
         factory(App\Models\Url::class, 30)->create();
 
-        factory(App\Models\Url::class)->create([
-            'url' => $url,
-        ]);
+        if (!\App\Models\Url::where('url', $url)->exists()) {
+            factory(App\Models\Url::class)->create([
+                'url' => $url,
+            ]);
+        }
     }
 }
