@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Scopes\ActiveScope;
 use App\Traits\MultiTenantable;
 
 class App extends BaseModel
@@ -14,6 +15,16 @@ class App extends BaseModel
     protected $fillable = [
         'name', 'user_id', 'active',
     ];
+
+    /**
+     * The "booted" method of the model.
+     *
+     * @return void
+     */
+    protected static function booted()
+    {
+        static::addGlobalScope(new ActiveScope());
+    }
 
     /**
      * Get the user that owns this app.

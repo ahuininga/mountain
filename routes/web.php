@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::namespace('Frontend')->group(function () {
+    Route::get('/', 'HomepageController@index');
+});
+
 Route::namespace('Admin')->prefix('admin')->group(function () {
     Route::get('dashboard', 'DashboardController@index');
 });
