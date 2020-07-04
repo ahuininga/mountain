@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@yield('title') | {{session('appName')}}</title>
+    <title>@yield('title') | {{request()->get('app')->name}}</title>
 </head>
 <body>
     <div id="content">

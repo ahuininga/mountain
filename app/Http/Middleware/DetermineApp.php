@@ -27,10 +27,7 @@ class DetermineApp
             })->firstOrFail();
         });
 
-        $request->session()->put([
-            'appId' => $app->id,
-            'appName' => $app->name,
-        ]);
+        $request->attributes->set('app', $app);
 
         return $next($request);
     }
