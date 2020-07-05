@@ -18,5 +18,5 @@ Route::namespace('Frontend')->group(function () {
 });
 
 Route::namespace('Admin')->prefix('admin')->group(function () {
-    Route::get('dashboard', 'DashboardController@index');
+    Route::get('/', 'DashboardController@index');
 });
