@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::namespace('Api')->group(function () {
-    Route::apiResource('urls', 'UrlsController')->parameters(['urls' => 'id']);
-    Route::apiResource('apps', 'AppsController')->parameters(['apps' => 'id']);
     Route::apiResource('users', 'UsersController')->parameters(['users' => 'id']);
+    Route::apiResource('apps', 'AppsController')->parameters(['apps' => 'id']);
+    Route::apiResource('urls', 'UrlsController')->parameters(['urls' => 'id']);
 });

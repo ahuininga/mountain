@@ -18,7 +18,7 @@ class DetermineApp
      */
     public function handle($request, Closure $next)
     {
-        $app = Cache::remember('app-' . request()->getHost(), Config::get('cache.time', 0), function () {
+        $app = Cache::remember(request()->getHost(), Config::get('cache.time', 0), function () {
             return App::select([
                 'id',
                 'name'
