@@ -18,5 +18,8 @@ Route::namespace('Frontend')->group(function () {
 });
 
 Route::namespace('Admin')->prefix('admin')->group(function () {
-    Route::get('dashboard', 'DashboardController@index');
+    Route::get('/', 'DashboardController@index');
 });
+
+// locale Route
+Route::get('lang/{locale}',[\App\Http\Controllers\LanguageController::class,'swap']);

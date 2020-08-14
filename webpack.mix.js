@@ -1,4 +1,5 @@
 const mix = require('laravel-mix');
+const glob = require('glob');
 
 /*
  |--------------------------------------------------------------------------
@@ -11,5 +12,11 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css');
+mix.copyDirectory('resources/images', 'public/images');
+mix.copyDirectory('resources/fonts', 'public/fonts');
+
+mix.sass('resources/sass/admin/admin.scss', 'public/css')
+    .js('resources/js/admin/admin.js', 'public/js')
+    .copy('resources/vendor/js/vendor.min.js', 'public/js/vendor.js')
+    .copy('resources/vendor/css/vendor.min.css', 'public/css/vendor.css')
+    .version();
