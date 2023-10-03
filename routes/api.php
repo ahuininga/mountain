@@ -14,6 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::prefix('v1')->group(function () {
+    Route::post('users', [
+        \App\Http\Controllers\Api\UserController::class, 'store',
+    ]);
+});
+
+Route::middleware('auth:sanctum')->group(function () {
+    Route::prefix('v1')->group(function () {
+        Route::apiResource('users', \App\Http\Controllers\Api\UserController::class)->except(['store']);
+        Route::apiResource('apps', \App\Http\Controllers\Api\AppController::class);
+        Route::apiResource('urls', \App\Http\Controllers\Api\UrlController::class);
+    });
 });
