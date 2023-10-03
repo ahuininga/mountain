@@ -10,7 +10,7 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
-  phpVersion: 8.2
+  phpVersion: latest
 
 steps:
 - script: |
