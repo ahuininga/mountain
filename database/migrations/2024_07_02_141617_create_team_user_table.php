@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('team_user', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('id')->primary();
             $table->foreignUuid('team_id');
             $table->foreignUuid('user_id');
             $table->string('role')->nullable();
