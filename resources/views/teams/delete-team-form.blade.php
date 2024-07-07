@@ -21,11 +21,11 @@
         <!-- Delete Team Confirmation Modal -->
         <x-confirmation-modal wire:model.live="confirmingTeamDeletion">
             <x-slot name="title">
-                {{ __('Delete Team') }}
+                {{ __('App Team') }}
             </x-slot>
 
             <x-slot name="content">
-                {{ __('Are you sure you want to delete this team? Once a team is deleted, all of its resources and data will be permanently deleted.') }}
+                {{ __('Are you sure you want to delete this app? Once a app is deleted, all of its resources and data will be permanently deleted.') }}
             </x-slot>
 
             <x-slot name="footer">
@@ -34,7 +34,7 @@
                 </x-secondary-button>
 
                 <x-danger-button class="ms-3" wire:click="deleteTeam" wire:loading.attr="disabled">
-                    {{ __('Delete Team') }}
+                    {{ __('Delete App') }}
                 </x-danger-button>
             </x-slot>
         </x-confirmation-modal>

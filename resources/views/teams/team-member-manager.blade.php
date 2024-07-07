@@ -10,7 +10,7 @@
                 </x-slot>
 
                 <x-slot name="description">
-                    {{ __('Add a new team member to your team, allowing them to collaborate with you.') }}
+                    {{ __('Add a new team member to your app, allowing them to collaborate with you.') }}
                 </x-slot>
 
                 <x-slot name="form">
